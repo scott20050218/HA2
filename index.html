@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的待办事项</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="card__header">
+          <h1 class="title">我的待办事项</h1>
+        </header>
+
+        <section class="add">
+          <form id="todo-form" class="add__form" autocomplete="off">
+            <label for="todo-input" class="visually-hidden">添加新任务</label>
+            <input
+              type="text"
+              id="todo-input"
+              class="add__input"
+              placeholder="请输入新任务..."
+              required
+            />
+            <button type="submit" id="add-btn" class="btn btn--primary">
+              添加 +
+            </button>
+          </form>
+        </section>
+
+        <section class="list">
+          <div class="list__toolbar">
+            <h2 class="section-title">任务列表</h2>
+            <div class="tabs" role="tablist" aria-label="过滤">
+              <button
+                id="filter-all"
+                class="tab is-active"
+                role="tab"
+                aria-selected="true"
+              >
+                全部
+              </button>
+              <button
+                id="filter-active"
+                class="tab"
+                role="tab"
+                aria-selected="false"
+              >
+                未完成
+              </button>
+              <button
+                id="filter-completed"
+                class="tab"
+                role="tab"
+                aria-selected="false"
+              >
+                已完成
+              </button>
+            </div>
+            <div class="counter">
+              <span id="task-count">共 0 项任务</span>
+            </div>
+          </div>
+
+          <ol id="todo-list" class="list__items" aria-live="polite"></ol>
+
+          <p id="empty-state" class="empty">暂无任务，添加一个新任务开始吧！</p>
+        </section>
+
+        <footer class="card__footer">
+          <button id="clear-completed" class="btn btn--secondary">
+            清除已完成
+          </button>
+          <button id="clear-all" class="btn btn--danger">清空所有</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
